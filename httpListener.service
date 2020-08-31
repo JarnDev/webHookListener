@@ -1,0 +1,12 @@
+[Unit]
+Description=HTTP listener
+After=syslog.target network.target
+
+[Service]
+Type=idle
+WorkingDirectory=/root/hooks/webHookListener
+ExecStart=/usr/bin/node index.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
